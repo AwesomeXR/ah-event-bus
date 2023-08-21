@@ -7,16 +7,20 @@
   ],
   "main": "dist/index.js",
   "scripts": {
-    "ci": "ah-workflow ci --disableModules=eslint",
-    "build": "ah-workflow build",
-    "prepublishOnly": "npm run ci && npm run build"
+    "lint": "npx eslint src --ext .ts",
+    "build": "npx tsc -p tsconfig.json --outDir dist",
+    "prepublishOnly": "npm run lint && npm run build"
   },
   "author": "concefly@foxmail.com",
   "license": "ISC",
   "devDependencies": {
     "@types/node": "^18.15.11",
-    "ah-workflow": "workspace:^2.0.18",
-    "typescript": "^5.0.3"
+    "eslint": "^8.47.0",
+    "typescript": "^5.1.6",
+    "@typescript-eslint/parser": "^6.4.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-prettier": "^5.0.0"
   },
-  "sideEffects": false
+  "sideEffects": false,
+  "dependencies": {}
 }

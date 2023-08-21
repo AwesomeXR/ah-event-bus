@@ -25,7 +25,7 @@ export class EventBus<T extends Record<string, any>> {
     if (type && handler) {
       this._handleMap.set(
         type,
-        (this._handleMap.get(type) || []).filter(h => h !== handler)
+        (this._handleMap.get(type) || []).filter((h) => h !== handler)
       );
     }
 

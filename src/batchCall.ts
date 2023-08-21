@@ -5,6 +5,7 @@ export function batchCall<T extends Function>(this: any, list: T[], ...args: any
   const _mod = list.length % 16;
   let i = 0;
 
+  // eslint-disable-next-line default-case
   switch (_mod) {
     case 15:
       list[i++].apply(this, args);
